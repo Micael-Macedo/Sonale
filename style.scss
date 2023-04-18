@@ -395,7 +395,9 @@ footer {
             border: 2px solid #A962FF;
         }
         &:hover{
-            border: 2px solid #A962FF
+            color: white;
+            border: 2px solid #A962FF;
+            transform: translateY(0);
         }
     }
 

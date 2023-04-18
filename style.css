@@ -369,7 +369,9 @@ footer .footerLink li a {
   border: 2px solid #A962FF;
 }
 .title .cardButton:hover {
+  color: white;
   border: 2px solid #A962FF;
+  transform: translateY(0);
 }
 
 .groupInline {

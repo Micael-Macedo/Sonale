@@ -6,6 +6,14 @@
   list-style-type: none;
   color: #FFFFFF;
 }
+*::-moz-selection {
+  background: #00ffbd;
+  color: #232323;
+}
+*::selection {
+  background: #00ffbd;
+  color: #232323;
+}
 
 html {
   font-size: 62.5%;
@@ -14,21 +22,25 @@ html {
 header {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  position: relative;
+  z-index: 3;
 }
 header .breakpoint {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-transform: uppercase;
   background: linear-gradient(260.33deg, #0047FF -13.37%, #00BCD4 109.53%);
   height: 3.7rem;
-  font-size: 1.7rem;
-  line-height: 2.7rem;
 }
 header .breakpoint h2 {
+  font-size: 1.7rem;
+  line-height: 2.7rem;
   color: #000000;
 }
-header nav {
+
+nav {
   width: 100%;
   background: rgba(0, 0, 0, 0.6);
   color: #848895;
@@ -37,10 +49,11 @@ header nav {
   justify-content: space-between;
   height: 6.7rem;
   padding: 0 20%;
-  top: 3.7rem;
-  position: absolute;
+  top: 0;
+  position: sticky;
+  z-index: 3;
 }
-header nav ul.nav-list {
+nav ul.nav-list {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -51,8 +64,14 @@ header nav ul.nav-list {
 body {
   background-color: black;
 }
-body #landingContent {
+body section {
   height: 100vh;
+  padding: 5%;
+}
+body #landingContent {
+  position: relative;
+  top: -10rem;
+  padding-top: 18%;
   background-image: url("./img/main-bg.png");
   background-repeat: no-repeat;
   background-size: 100%;
@@ -89,19 +108,222 @@ body #landingContent .companies .list-companies {
   justify-content: center;
   gap: 4rem;
 }
+body #community {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  padding: 10%;
+}
+body #community .leftContent {
+  margin-top: 6rem;
+  width: 57rem;
+}
+body #community .leftContent h2 {
+  width: 31.6rem;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 46px;
+  letter-spacing: 1px;
+}
+body #community .rightContent {
+  text-transform: uppercase;
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 8rem;
+}
+body #community .rightContent .activeAccounts p {
+  background: linear-gradient(261.81deg, #19FB9B -8.01%, #8C01FA 100%);
+}
+body #community .rightContent .nftMinted p {
+  background: linear-gradient(260.33deg, #0047FF -13.37%, #00BCD4 109.53%);
+}
+body #community .rightContent .costTransation p {
+  background: linear-gradient(265.11deg, #00FFBD -5.84%, #025B8C 111.58%);
+}
+body #community .rightContent .activeAccounts p,
+body #community .rightContent .nftMinted p,
+body #community .rightContent .costTransation p {
+  color: transparent;
+  font-size: 10.1rem;
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+body #community .rightContent .activeAccounts h2,
+body #community .rightContent .nftMinted h2,
+body #community .rightContent .costTransation h2 {
+  color: #C4C4C4;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+body #dataInfo {
+  background-image: url("./img/IMAGE.png");
+  background-size: contain;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  padding: 15%;
+  height: 120vh;
+}
+body #dataInfo h2 {
+  max-width: 28rem;
+  font-size: 3.8rem;
+  line-height: 4.6rem;
+  letter-spacing: 0.1rem;
+}
+body #dataInfo span.blueBall {
+  background: #1FCFF1;
+  border-radius: 50%;
+  width: 0.429rem;
+  height: 0.447rem;
+  margin-right: 0.571rem;
+  position: relative;
+  top: 0.3rem;
+}
+body #dataInfo .topics {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 4rem;
+}
+body #dataInfo .topics h3 {
+  font-weight: 400;
+  font-size: 2.8rem;
+  line-height: 3.3rem;
+  padding-left: 1.7rem;
+  margin-bottom: 1rem;
+}
+body #dataInfo .topics p {
+  font-size: 1.7rem;
+  line-height: 2.7rem;
+  color: #C4C4C4;
+}
+body #dataInfo .topics .data {
+  font-size: 2.8rem;
+  line-height: 2.8rem;
+  margin-top: 2.4rem;
+  margin-bottom: 1.1rem;
+  color: #FFFFFF;
+  display: flex;
+}
+body #dataInfo .topics .dataText {
+  text-transform: uppercase;
+}
+body #dataInfo .topics .leftTopic {
+  margin-top: 4.4rem;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+body #dataInfo .topics .leftTopic div {
+  max-width: 34rem;
+  padding: 3.2rem;
+}
+body #dataInfo .topics .leftTopic .fast h3 {
+  border-left: 2px solid aqua;
+}
+body #dataInfo .topics .leftTopic .scalable h3 {
+  border-left: 2px solid purple;
+}
+body #dataInfo .topics .rightTopic {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+body #dataInfo .topics .rightTopic div {
+  max-width: 27.6rem;
+}
+body #dataInfo .topics .rightTopic .decentralized h3 {
+  border-left: 2px solid yellow;
+}
+body #dataInfo .topics .rightTopic .efficient h3 {
+  border-left: 2px solid #19FB9B;
+}
+body #build .card {
+  border-radius: 20px;
+  max-width: 110rem;
+  margin: auto;
+  display: none;
+}
+body #build .card.selected {
+  display: block;
+}
+body #build .card .inline {
+  border-radius: 20px;
+  background-color: #111111;
+}
+body #build .card .inline .card-text {
+  padding: 5rem;
+  width: 50%;
+}
+body #build .card .inline .card-text img, body #build .card .inline .card-text svg {
+  max-width: 24rem;
+  margin-bottom: 1.4rem;
+}
+body #build .card .inline .card-text p {
+  font-size: 2.1rem;
+  line-height: 2.7rem;
+  margin-bottom: 1.4rem;
+}
+body #build .card .inline .card-text a {
+  font-size: 2.1rem;
+  color: #A962FF;
+  text-decoration: none;
+}
+body #build .card .inline img {
+  width: 50%;
+  border-radius: 20px 0 0 20px;
+}
+body #build .card .sponsers {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+body #buildCommunity .startBuild {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+body #buildCommunity .startBuild h3 {
+  max-width: 50rem;
+  font-size: 3.8rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
 
 footer {
   width: 100%;
-  height: 30vh;
-  padding: 3rem;
+  padding: 5rem 10rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+footer ul li.managedBy {
+  margin: 2rem 0;
 }
 footer .icons {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+footer .icons i {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  background-color: grey;
+  display: grid;
+  place-content: center;
+  font-size: 1.6rem;
+}
+footer p {
+  font-size: 1.8rem;
 }
 footer .footerLink {
   display: flex;
@@ -123,10 +345,43 @@ footer .footerLink li a {
   text-decoration: none;
 }
 
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3.2rem;
+}
+.title h2 {
+  font-size: 3.9rem;
+  line-height: 4.6rem;
+}
+.title .inline {
+  gap: 2rem;
+}
+.title .cardButton {
+  background: #111111;
+  border: 2px solid #111111;
+  border-radius: 1.5rem;
+  padding: 1rem 1.4rem;
+  transition: 1s;
+}
+.title .cardButton.selected {
+  border: 2px solid #A962FF;
+}
+.title .cardButton:hover {
+  border: 2px solid #A962FF;
+}
+
 .groupInline {
   display: flex;
   justify-content: center;
   gap: 15px;
+}
+
+.inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 button {
@@ -134,6 +389,8 @@ button {
   border-radius: 36px;
   color: #FFFFFF;
   cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.7s;
 }
 button.btn-primary {
   background: linear-gradient(98.88deg, #8C01FA -2.99%, #000000 102.28%);
@@ -142,4 +399,9 @@ button.btn-primary {
 button.btn-secondary {
   background: #000000;
   border: 1px solid #FFFFFF;
+}
+button:hover {
+  background: #fff;
+  color: black;
+  transform: translateY(-10px);
 }/*# sourceMappingURL=style.css.map */

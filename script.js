@@ -38,26 +38,7 @@ function displayMenu(menuSelected) {
         $(menuSelected).toggleClass("selected")
     }
 }
-const controls = document.querySelectorAll(".control");
-const items = document.querySelectorAll(".item")
-const maxItems = items.length;
-currentItem = 0
 
 
-setInterval(() => {
-    currentItem += 1
-    if(currentItem < 0){
-        currentItem = maxItems - 1;
-    }
-    if(currentItem === maxItems){
-        currentItem = 0;
-    }
-    console.log(currentItem);
-    items.forEach(item => item.classList.remove('current-item'))
-    items[currentItem].scrollIntoView({
-        inline: "center",
-        behavior: "smooth"
-    })
-    items[currentItem].classList.add('current-item')
-}, 2000);
+
 

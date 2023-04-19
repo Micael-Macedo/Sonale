@@ -438,7 +438,7 @@ body {
                     }
                 }
             }
-            &:hover .logos-slide{
+            &:hover .images-slide{
                 animation-play-state: paused;
             }
         }
@@ -511,7 +511,7 @@ footer {
 
 .title {
     @include flex(center, space-between);
-    padding: 0 38rem;
+    padding: 0 20rem;
 
     h2 {
         font-size: 3.9rem;

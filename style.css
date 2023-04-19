@@ -385,7 +385,7 @@ body #buildCommunity .images .images-slide .image img {
   max-width: 60rem;
   max-height: 46rem;
 }
-body #buildCommunity .images:hover .logos-slide {
+body #buildCommunity .images:hover .images-slide {
   animation-play-state: paused;
 }
 body #buildCommunity .startBuild {
@@ -452,7 +452,7 @@ footer .footerLink li a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 38rem;
+  padding: 0 20rem;
   margin-bottom: 3.2rem;
 }
 .title h2 {

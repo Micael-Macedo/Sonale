@@ -11,12 +11,12 @@
         color: #232323;
     }
 }
-@keyframes scroll {
-    0%{
+@keyframes slide {
+    from{
         transform: translateX(0);
     }
-    100%{
-        transform: translateX(calc(-25rem * 9));
+    to{
+        transform: translateX(-100%);
     }
     
 }
@@ -409,29 +409,38 @@ body {
     }
 
     #buildCommunity {
-        .slider{
-            height: 25rem;
-            margin: auto;
-            position: relative;
-            width: 90%;
-            display: grid;
-            place-items: center;
+        .images{
             overflow: hidden;
-        }
-        .slide-tracker{
             display: flex;
-            flex-direction: row;
-            width: 25rem * 18;
-            gap: 1rem;
-            animation: scroll 10s linear infinite;
-        }
-        .slide{
-            background-color: #0047FF;
-            height: 20rem;
-            width: 25rem;
-            display: flex;
-            align-items: center;
-            padding: 1.5rem;
+            gap: 2rem;
+            .images-slide{
+                white-space: nowrap;
+                display: flex;
+                flex-direction: row;
+                width: 25rem * 18;
+                gap: 2rem;
+                animation: 20s slide infinite linear;
+                height: 46rem;
+                .image{
+                    height: 20rem;
+                    
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 2rem;
+                    padding: 1.5rem;
+                    border-radius: 2rem;
+                    img{
+                        border-radius: 2rem;
+                        min-width: 30rem;
+                        max-width: 60rem;
+                        max-height: 46rem;
+                    }
+                }
+            }
+            &:hover .logos-slide{
+                animation-play-state: paused;
+            }
         }
         .startBuild {
             @include flex(center, center);

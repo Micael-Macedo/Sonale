@@ -15,12 +15,12 @@
   color: #232323;
 }
 
-@keyframes scroll {
-  0% {
+@keyframes slide {
+  from {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(-225rem);
+  to {
+    transform: translateX(-100%);
   }
 }
 @keyframes rotateLinear {
@@ -356,29 +356,37 @@ body #build .card .sponsers img {
   max-width: 10rem;
   height: 3rem;
 }
-body #buildCommunity .slider {
-  height: 25rem;
-  margin: auto;
-  position: relative;
-  width: 90%;
-  display: grid;
-  place-items: center;
+body #buildCommunity .images {
   overflow: hidden;
+  display: flex;
+  gap: 2rem;
 }
-body #buildCommunity .slide-tracker {
+body #buildCommunity .images .images-slide {
+  white-space: nowrap;
   display: flex;
   flex-direction: row;
   width: 450rem;
-  gap: 1rem;
-  animation: scroll 10s linear infinite;
+  gap: 2rem;
+  animation: 20s slide infinite linear;
+  height: 46rem;
 }
-body #buildCommunity .slide {
-  background-color: #0047FF;
+body #buildCommunity .images .images-slide .image {
   height: 20rem;
-  width: 25rem;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  gap: 2rem;
   padding: 1.5rem;
+  border-radius: 2rem;
+}
+body #buildCommunity .images .images-slide .image img {
+  border-radius: 2rem;
+  min-width: 30rem;
+  max-width: 60rem;
+  max-height: 46rem;
+}
+body #buildCommunity .images:hover .logos-slide {
+  animation-play-state: paused;
 }
 body #buildCommunity .startBuild {
   display: flex;

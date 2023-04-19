@@ -5,20 +5,32 @@
     font-family: Helvetica, sans-serif;
     list-style-type: none;
     color: #FFFFFF;
-    &::selection{
+
+    &::selection {
         background: #00ffbd;
         color: #232323;
     }
 }
+@keyframes scroll {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-25rem * 9));
+    }
+    
+}
 @keyframes rotateLinear {
-    from{
+    from {
         background-position: 0% 50%;
     }
-    to{
+
+    to {
         background-position: 140% 50%;
     }
 
 }
+
 @mixin flex($align, $just) {
     display: flex;
     align-items: $align;
@@ -34,13 +46,14 @@ header {
     display: flex;
     position: relative;
     z-index: 3;
+
     .breakpoint {
         width: 100%;
         @include flex(center, center);
         text-transform: uppercase;
         background: linear-gradient(260.33deg, #0047FF -13.37%, #00BCD4 109.53%);
         height: 3.7rem;
-    
+
         h2 {
             font-size: 1.7rem;
             line-height: 2.7rem;
@@ -48,6 +61,7 @@ header {
         }
     }
 }
+
 nav {
     width: 100%;
     background: rgba(0, 0, 0, 0.6);
@@ -58,45 +72,56 @@ nav {
     top: 0;
     position: sticky;
     z-index: 3;
+
     ul.nav-list {
         @include flex(center, space-between);
         gap: 32px;
         font-size: 1.7rem;
-        li{
+
+        li {
             cursor: pointer;
             color: #848895;
             transition: 0.5s;
-            i{
+
+            i {
                 position: relative;
                 transition: 0.5s;
                 color: #848895;
             }
-            &:hover{
+
+            &:hover {
                 color: #fff;
-                i{
+
+                i {
                     color: #fff;
                 }
             }
-            &.selected{
+
+            &.selected {
                 color: #fff;
-                i{
+
+                i {
                     transform: rotate(180deg);
                     color: #fff;
                 }
             }
         }
+
         position: relative;
-        ul.nav-toggle{
+
+        ul.nav-toggle {
             display: none;
             position: absolute;
             transition: 2s;
-            &.selected{
+
+            &.selected {
                 display: block;
 
             }
         }
     }
 }
+
 body {
     background-color: black;
 
@@ -176,7 +201,7 @@ body {
                     background-size: 150%;
                     background-position: 50%;
                     animation: 3s infinite rotateLinear alternate;
-                    
+
                 }
             }
 
@@ -326,10 +351,12 @@ body {
             max-width: 92rem;
             margin: auto;
             display: none;
-            &.selected{
+
+            &.selected {
                 display: block;
                 transition-delay: 1s;
             }
+
             .inline {
                 border-radius: 20px;
                 background-color: #111111;
@@ -339,9 +366,11 @@ body {
                     padding: 5rem;
                     width: 50%;
                     height: 100%;
-                    @include flex(start,center);
+                    @include flex(start, center);
                     flex-direction: column;
-                    img, svg {
+
+                    img,
+                    svg {
                         max-width: 24rem;
                         height: 5rem;
                         margin-bottom: 2.4rem;
@@ -366,21 +395,49 @@ body {
                     border-radius: 20px 0 0 20px;
                 }
             }
-            .sponsers{
-                img{
+
+            .sponsers {
+                img {
                     max-width: 10rem;
                     height: 3rem;
                 }
+
                 margin-top: 2rem;
                 @include flex(center, space-around)
             }
         }
     }
-    #buildCommunity{
-        .startBuild{
+
+    #buildCommunity {
+        .slider{
+            height: 25rem;
+            margin: auto;
+            position: relative;
+            width: 90%;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+        }
+        .slide-tracker{
+            display: flex;
+            flex-direction: row;
+            width: 25rem * 18;
+            gap: 1rem;
+            animation: scroll 10s linear infinite;
+        }
+        .slide{
+            background-color: #0047FF;
+            height: 20rem;
+            width: 25rem;
+            display: flex;
+            align-items: center;
+            padding: 1.5rem;
+        }
+        .startBuild {
             @include flex(center, center);
             flex-direction: column;
-            h3{
+
+            h3 {
                 max-width: 50rem;
                 font-size: 3.8rem;
                 text-align: center;
@@ -392,16 +449,19 @@ body {
 
 footer {
     width: 100%;
-    padding:  5rem 10rem;
+    padding: 5rem 10rem;
     @include flex(center, space-between);
-    ul{
-        li.managedBy{
+
+    ul {
+        li.managedBy {
             margin: 2rem 0;
         }
     }
+
     .icons {
         @include flex(center, space-between);
-        i{
+
+        i {
             width: 2.6rem;
             height: 2.6rem;
             border-radius: 50%;
@@ -411,9 +471,11 @@ footer {
             font-size: 1.6rem;
         }
     }
-    p{
+
+    p {
         font-size: 1.8rem;
     }
+
     .footerLink {
         @include flex(start, space-between);
 
@@ -437,26 +499,32 @@ footer {
         }
     }
 }
+
 .title {
     @include flex(center, space-between);
     padding: 0 38rem;
+
     h2 {
         font-size: 3.9rem;
         line-height: 4.6rem;
     }
-    .inline{
+
+    .inline {
         gap: 2rem;
     }
+
     .cardButton {
         background: #111111;
         border: 2px solid #111111;
         border-radius: 1.5rem;
         padding: 1rem 1.4rem;
         transition: 1s;
+
         &.selected {
             border: 2px solid #A962FF;
         }
-        &:hover{
+
+        &:hover {
             color: white;
             border: 2px solid #A962FF;
             transform: translateY(0);
@@ -465,6 +533,7 @@ footer {
 
     margin-bottom: 3.2rem;
 }
+
 .groupInline {
     display: flex;
     justify-content: center;
@@ -482,6 +551,7 @@ button {
     cursor: pointer;
     text-transform: uppercase;
     transition: 0.7s;
+
     &.btn-primary {
         background: linear-gradient(98.88deg, #8C01FA -2.99%, #000000 102.28%);
         border: 1px solid #000000;
@@ -492,7 +562,8 @@ button {
         background: #000000;
         border: 1px solid #FFFFFF;
     }
-    &:hover{
+
+    &:hover {
         background: #fff;
         color: black;
         transform: translateY(-10px);

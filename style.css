@@ -15,6 +15,14 @@
   color: #232323;
 }
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-225rem);
+  }
+}
 @keyframes rotateLinear {
   from {
     background-position: 0% 50%;
@@ -317,7 +325,8 @@ body #build .card .inline .card-text {
   justify-content: center;
   flex-direction: column;
 }
-body #build .card .inline .card-text img, body #build .card .inline .card-text svg {
+body #build .card .inline .card-text img,
+body #build .card .inline .card-text svg {
   max-width: 24rem;
   height: 5rem;
   margin-bottom: 2.4rem;
@@ -346,6 +355,30 @@ body #build .card .sponsers {
 body #build .card .sponsers img {
   max-width: 10rem;
   height: 3rem;
+}
+body #buildCommunity .slider {
+  height: 25rem;
+  margin: auto;
+  position: relative;
+  width: 90%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+body #buildCommunity .slide-tracker {
+  display: flex;
+  flex-direction: row;
+  width: 450rem;
+  gap: 1rem;
+  animation: scroll 10s linear infinite;
+}
+body #buildCommunity .slide {
+  background-color: #0047FF;
+  height: 20rem;
+  width: 25rem;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
 }
 body #buildCommunity .startBuild {
   display: flex;
